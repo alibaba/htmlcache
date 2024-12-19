@@ -1,0 +1,45 @@
+.doc{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.left-nav{
+  position: fixed;
+  width: 200px;
+  border-right: .5px solid #e2e2e2;
+  flex-shrink: 0;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px;
+  margin-top: 48px;
+  top: 64px;
+  bottom: 0;
+  left: 32px;
+  .nav-item{
+    padding: 0 19px;
+    height: 38px;
+    display: block;
+    color: #000;
+    font-size: 14px;
+    line-height: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    margin: 4px 0;
+    transition: color .25s;
+    &.active{
+      color: #7723de;
+      background-color: #f8f2ff;
+    }
+    &:hover{
+      color: #7723de;
+    }
+  }
+
+}
+
+.navbar{
+  background-color: #f8f2ff !important;
+  color:#7723de;
+}

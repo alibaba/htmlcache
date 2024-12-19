@@ -1,0 +1,39 @@
+.navbar{
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 32px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  &-left{
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  &-nav{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      line-height: 64px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .25s;
+    }
+  }
+  a{
+    user-select: none;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}
