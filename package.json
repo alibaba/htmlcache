@@ -10,7 +10,7 @@
     "build": "tsup",
     "genInjector": "node ./scripts/build-htmlcache.js",
     "dev": "vite website",
-    "dev:prod": "vite build website --watch & npx serve website/dist",
+    "preview": "vite preview website",
     "build:website": "vite build website"
   },
   "repository": {
