@@ -2,8 +2,8 @@
 
 存储HTML（渲染结果），而不是JSON数据。  
 在HTML里执行（内联），而不是JS资源里。   
-最好的骨架屏，HTMLCache——让二次访问的用户更快看到上次展示的内容。 
-LiveDemo+文档：(WIP)
+最好的骨架屏，HTMLCache——让二次访问的用户更快看到上次展示的内容。  
+LiveDemo+文档：https://alibaba.github.io/htmlcache/
 
 ## 使用场景  
 适合使用一般的接口缓存方案的页面都可以使用HTMLCache。  
