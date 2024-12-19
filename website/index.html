@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTMLCache - No more skeleton screens</title>
+  <style>
+    #loading {
+      background: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      color: #777;
+    }
+
+    .loader {
+      width: 32px;
+      height: 32px;
+      border: 5px solid rgb(97, 36, 192);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+      margin-right: 20px;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    #root-cached::before{
+      content: "HTMLCACHE";
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      color: #FFFFFF;
+      opacity: 0.5;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+<div id="loading">
+  <span class="loader"></span>
+  <span>This loading is fake, but yours is real.</span>
+</div>
+<div id="root"></div>
+<script>
+  window.htmlcache = {
+    disabled: !!localStorage.getItem('disabled'),
+    cacheKey: 'HTMLCacheDemo',
+    source: '#root',
+    on: {
+      // autoCapture:()=> {
+      //   if (document.querySelector('.hello')) return true;
+      // },
+      showCache: (root) => {
+        try {
+          document.getElementById('loading').remove();
+        } catch {
+        }
+        try {
+          const storageDetail = JSON.parse(localStorage.storageDetailObj);
+          if (storageDetail) {
+            root.getElementById('header-storage').style.display = 'block';
+          }
+          ['HTMLCacheLoader', 'HTMLCacheDemoCompressed', 'HTMLCacheDemoStyleCompressed'].forEach(key => {
+            root.getElementById(key).innerText = ((storageDetail[key] * 8) / 1024).toFixed(
+                2,
+              ) +
+              'KB'
+          })
+        } catch {
+        }
+        // debugger;
+      }
+    }
+  }
+  const t = document.createElement('script');
+  t.type = 'text/javascript';
+  t.text = localStorage.HTMLCacheLoader;
+  document.body.appendChild(t);
+</script>
+<script type="module" src="index.tsx"></script>
+</body>
+</html>
