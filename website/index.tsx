@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import Home from './pages/Home';
 
-import 'htmlcache';
+import 'htmlcache.js';
 
 const root = createRoot(document.getElementById('root'));
 setTimeout(() => {

@@ -4,7 +4,7 @@ const projectRootDir = path.resolve(__dirname);
 export default {
   resolve: {
     alias: {
-      htmlcache: path.resolve(projectRootDir, '../src'),
+      'htmlcache.js': path.resolve(projectRootDir, '../src'),
     },
   },
   assetsInclude: ['**/*.md'],

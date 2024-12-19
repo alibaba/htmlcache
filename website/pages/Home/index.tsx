@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { captureHtmlCache, removeHtmlCache, storageSense } from 'htmlcache';
+import { captureHtmlCache, removeHtmlCache, storageSense } from 'htmlcache.js';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark-dimmed.min.css';
 import './index.less';
