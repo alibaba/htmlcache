@@ -90,7 +90,7 @@ export default function Home() {
                 <br />
                 Try HTMLCache in your own website.
               </span>
-              <a className="header-button" href="/doc.html">
+              <a className="header-button" href="doc.html">
                 Docs
               </a>
             </div>

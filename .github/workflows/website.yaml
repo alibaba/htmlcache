@@ -78,7 +78,7 @@ jobs:
       - name: Build with Vite
         env:
           PREFIX_PATHS: 'true'
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build:website
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build:github
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

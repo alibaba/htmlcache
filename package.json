@@ -11,7 +11,8 @@
     "genInjector": "node ./scripts/build-htmlcache.js",
     "dev": "vite website",
     "preview": "vite preview website",
-    "build:website": "vite build website"
+    "build:website": "vite build website",
+    "build:github": "vite build website --base /htmlcache"
   },
   "repository": {
     "type": "git",
